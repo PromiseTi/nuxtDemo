@@ -309,7 +309,7 @@ header {
 .menu-nav-first-ab {
   position: absolute;
   width: 180px;
-  min-height: 180px;
+  /* min-height: 180px; */
   background: #333333;
   top: 80px;
   left: 0px;

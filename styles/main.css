@@ -24,6 +24,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+.mobCont{
+  width: 96vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 .kenDia {
   position: absolute;
   left: 0;

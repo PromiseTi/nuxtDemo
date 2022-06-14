@@ -10,9 +10,9 @@
       <div
         v-for="(item, index) in $t('h.newsList.bList')"
         :key="index"
-        class="docCont"
+        class="wow fadeInUp docCont"
       >
-        <img class="fileImg" src="/ecoPartner/img-filecoi.png" />
+        <img class="fileImg" src="/ecoPartner/img-news.png" />
         <div>
           <h4 class="margin-bottom-xs">{{ item.content }}</h4>
           <p class="fontSize-14 colo999">{{ item.source }}</p>
