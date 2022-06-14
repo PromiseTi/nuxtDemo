@@ -71,7 +71,7 @@ export default {
       useCookie: true,
       onlyOnRoot: false,
     },
-    lazy: true,
+    lazy: false,
     langDir: "i18n/",
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
