@@ -5,37 +5,73 @@
 -->
 <template>
   <div>
-    <div class="padd-tb-ba teams">
-      <h1 class="margin-bottom-liu">{{ obj.a }}</h1>
-      <div class="lin-height-2 fontSize-14">
-        <p>{{ obj.b1 }}</p>
-        <p>{{ obj.b2 }}</p>
-        <p>{{ obj.b3 }}</p>
-        <p>{{ obj.b4 }}</p>
-        <p>{{ obj.b5 }}</p>
-        <p>{{ obj.b6 }}</p>
+    <div class="pcTeam">
+      <div class="padd-tb-ba teams">
+        <h1 class="margin-bottom-liu">{{ obj.a }}</h1>
+        <div class="lin-height-2 fontSize-14">
+          <p>{{ obj.b1 }}</p>
+          <p>{{ obj.b2 }}</p>
+          <p>{{ obj.b3 }}</p>
+          <p>{{ obj.b4 }}</p>
+          <p>{{ obj.b5 }}</p>
+          <p>{{ obj.b6 }}</p>
+        </div>
+      </div>
+      <div class="backF3f5 padd-tb-ba">
+        <div class="malrCont teaItem">
+          <client-only>
+            <swiper class="swiper" :options="swiperOption1">
+              <swiper-slide v-for="(item, index) in obj.teamList" :key="index">
+                <div class="flex align-center justify-center teamKuang">
+                  <div class="text-center flexfrow padding-top-xl teaBlok">
+                    <img class="teamPh" :src="'/team/team' + index + '.png'" />
+                    <h3 class="margin-tb-sm">{{ item.hh1 }}</h3>
+                    <p>{{ item.hh2 }}</p>
+                  </div>
+                  <div class="teaWid">
+                    <div
+                      v-for="itemm in item.itList"
+                      :key="itemm"
+                      class="lin-height-18"
+                    >
+                      <img src="/zhuangshi.png" class="kenPos" />
+                      <p>{{ itemm }}</p>
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+          </client-only>
+        </div>
       </div>
     </div>
-    <div class="backF3f5 padd-tb-ba">
-      <div class="malrCont teaItem">
-        <client-only>
-          <el-carousel
-            trigger="click"
-            :interval="500000"
-            arrow="always"
-            height="500px"
-          >
-            <el-carousel-item
-              v-for="(item, index) in obj.teamList"
-              :key="index"
-            >
-              <div class="flex align-center justify-center teamKuang">
-                <div class="text-center flexfrow padding-top-xl teaBlok">
+    <div class="mobTeam">
+      <div class="padding-tb teams" style="height: auto">
+        <div class="mobCont">
+          <h2 class="margin-bottom">{{ obj.a }}</h2>
+          <div class="lin-height-16 fontSize-14">
+            <p>{{ obj.b1 }}</p>
+            <p>{{ obj.b2 }}</p>
+            <p>{{ obj.b3 }}</p>
+            <p>{{ obj.b4 }}</p>
+            <p>{{ obj.b5 }}</p>
+            <p>{{ obj.b6 }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="backF3f5 padding-tb">
+        <div class="mobCont teaItem">
+          <client-only>
+            <swiper class="swiper" :options="swiperOption1">
+              <swiper-slide v-for="(item, index) in obj.teamList" :key="index">
+                <div class="mobTeaBlock">
                   <img class="teamPh" :src="'/team/team' + index + '.png'" />
-                  <h3 class="margin-tb-sm">{{ item.hh1 }}</h3>
+                  <h3 class="margin-tb-xs">{{ item.hh1 }}</h3>
                   <p>{{ item.hh2 }}</p>
                 </div>
-                <div class="teaWid">
+                <div class="mobWid">
                   <div
                     v-for="itemm in item.itList"
                     :key="itemm"
@@ -45,10 +81,12 @@
                     <p>{{ itemm }}</p>
                   </div>
                 </div>
-              </div>
-            </el-carousel-item>
-          </el-carousel>
-        </client-only>
+              </swiper-slide>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+          </client-only>
+        </div>
       </div>
     </div>
   </div>
@@ -61,6 +99,19 @@ export default {
   props: {},
   data() {
     return {
+      //轮播
+      swiperOption1: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
       obj: {
         a: "About Us",
         b1: "SINSO, as a Filecoin Layer2 and infrastructure of Web3.0 Ecosystem",
@@ -128,6 +179,55 @@ export default {
 };
 </script>
 <style scoped>
+.pcTeam {
+  display: block;
+}
+.mobTeam {
+  display: none;
+}
+::v-deep .swiper-button-next,
+.swiper-button-prev {
+  width: auto;
+}
+::v-deep .swiper-button-prev::after {
+  content: "";
+  background: url("/index/img-left.png") no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+::v-deep .swiper-button-next::after {
+  content: "";
+  background: url("/index/img-right.png") no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (max-width: 600px) {
+  .pcTeam {
+    display: none;
+  }
+  .mobTeam {
+    display: block;
+  }
+  .mobTeaBlock {
+    margin: 30px auto;
+    padding-top: 10px;
+    width: 280px;
+    height: 200px;
+    box-shadow: 0px 2px 10px 1px rgba(163, 175, 178, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .mobWid {
+    padding: 30px 10px 30px 30px;
+    font-size: 14px;
+  }
+  .mobWid > div {
+    position: relative;
+    padding-left: 30px;
+  }
+}
 .teams {
   height: 500px;
   background: url("/team/teamBack.png") no-repeat;

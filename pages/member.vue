@@ -920,4 +920,24 @@ h2 {
   font-size: 18px;
   margin: 50px auto 100px auto;
 }
+@media screen and (max-width: 600px) {
+  .padd-tb-ba {
+    padding: 30px 0px;
+  }
+  .ambCont {
+    width: 96vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .amb {
+    display: block;
+  }
+  ::v-deep .amb .el-input {
+    width: 100%;
+  }
+  ::v-deep .el-dialog {
+    margin-top: 40vh !important;
+    width: 90vw !important;
+  }
+}
 </style>

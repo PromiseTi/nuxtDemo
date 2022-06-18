@@ -2,17 +2,17 @@ export default {
   had: {
     li1: "Home",
     li2: "Prouduct",
-    li3: "DOCs",
-    li4: "Eco partner",
+    li3: "Docs",
+    li4: "Ecosystem",
     li5: "DAC",
     li6: "Tokens",
     li7: "About",
-    li8: "Test nets",
+    li8: "Testnet",
   },
   a: {
     h1: "Web3.0 Infrastructure",
-    h2: "Simplifying Decentralized",
-    h3: "Storage and Data Governance",
+    h2: "Simplifying Decentralized Storage",
+    h3: "And Data Governance",
     h4: "FFA 11th Placer",
     pow1: "Power quick DAPP building on the",
     pow2: "Filecoin network",
@@ -23,7 +23,7 @@ export default {
         powt3: "user experience; empower data assets ownership confirmation.",
       },
       {
-        powt1: "Gamefi",
+        powt1: "GameFi",
         powt2: "Provide a caching layer for data of dynamic NFTs in GameFi",
         powt3: "without compromising the effective experience while ensuring ",
         powt4: "decentralization.",
@@ -56,7 +56,7 @@ export default {
     usi1: "Start using  SINSO Getway API",
     usi2: "Dev docs",
     usi3: "Testnet",
-    byh: "Ecological partner",
+    byh: "SINSO Ecosystem Partners",
     byList: [
       {
         a1: "ARTHA HEALTH is a bio-wave",
@@ -95,7 +95,7 @@ export default {
         a4: "has been",
       },
     ],
-    roah: "Road map",
+    roah: "Roadmap",
     toagit: "Contribute on Github",
     roaList: [
       {
@@ -148,12 +148,28 @@ export default {
       },
     ],
     edyh: "Backed by",
-    newh: "News on sinso",
+    newh: "News on SINSO",
     newList: [
-      { a: "2022.April.21", b: "News on sinso News on sinso…" },
-      { a: "2022.April.21", b: "News on sinso News on sinso…" },
-      { a: "2022.April.21", b: "News on sinso News on sinso…" },
-      { a: "2022.April.21", b: "News on sinso News on sinso…" },
+      {
+        a: "June 12, 2022",
+        b: "Updates on Product, Market, Ecosystem…",
+        c: "https://sinsonetwork.medium.com/sinso-weekly-newsletter-43bffb6dcc7f",
+      },
+      {
+        a: "June 5, 2022",
+        b: "Updates on Product, Market, Ecosystem…",
+        c: "https://sinsonetwork.medium.com/sinso-weekly-newsletter-48f218c91858",
+      },
+      {
+        a: "May 29, 2022",
+        b: "Updates on Product, Market, Ecosystem…",
+        c: "https://sinsonetwork.medium.com/sinso-weekly-newsletter-e24f2d7b3915",
+      },
+      {
+        a: "May 22, 2022",
+        b: "Updates on Product, Market, Ecosystem…",
+        c: "https://sinsonetwork.medium.com/sinso-weekly-newsletter-c3937bae23a8",
+      },
     ],
   },
   b: {
@@ -165,7 +181,7 @@ export default {
     prList: [
       {
         a: "SINSO Getway",
-        b: "As a tool for individuals to manage data sets, SINSO Data Land allows users to set and plan data governance and storage status. It collects the background  data of SINSO ecological storage here for individuals to truly control their own data, and provides an API interface that can easily connect to DApps. It is an entrance leading everyone to Metaverse.",
+        b: "As a secondary distributed-cache network based on Filecoin, SINSO Getway is built for current use scenarios required by GameFi, VR, AR, Video Streaming, as well as high-speed CDN and DAPP response. In addition to ensuring decentralization, user data privacy and security, SINSO Getway meanwhile focuses on improving efficiency. The valid data upload interface provided by SINSO makes it easy for individuals and institutions to use Filecoin‘s storage resources. SINSO Getway is an excellent front-loading layer for Filecoin's valid data, allowing more valuable data to be stored in the Filecoin network.",
       },
       {
         a: "SINSO Donors Network",
@@ -187,9 +203,9 @@ export default {
   },
   c: {
     docList: [
-      { a: "Technical white paper", b: "View details" },
+      { a: "Technical Whitepaper", b: "View details" },
       {
-        a: "Economic white paper",
+        a: "Economics Whitepaper",
         b: "View details",
         c: "https://drive.google.com/file/d/1DUp04GY1xk8Eoh14aN2PjizQoy0gr5Y5/view",
       },
@@ -278,28 +294,44 @@ export default {
       bList: [
         {
           content:
-            "SINSO-DicomNetwork entered the finals of Wanxiang Hackathon and won the Community Choice Award (Top 2)",
+            "We are excited to announce SINSO's upcoming attendance at Filecoin Singapore Summit.",
           source: "Source",
+          toLink: "activity.html",
+          hrefs: "",
         },
         {
           content:
-            "SINSO BOX Utopia edition released in Chia Hackathon and awarded Global Chia Hackathon Winners @Asia (Top 3)",
+            "SINSO-DicomNetwork entered the finals of Wanxiang Hackathon and won the Community Choice Award (Top 2)",
           source: "Source",
+          hrefs:
+            "https://blockcast.cc/news/2021-wanxiang-blockchain-hackathon-concludes-with-14-award-winning-projects-at-a-glance/",
+        },
+        {
+          content:
+            "SINSO BOX Utopia edition released in Chia Hackathon and awarded  Global Chia Hackathon Winners @Asia (Top 3)",
+          source: "Source",
+          hrefs:
+            "https://thechiaplot.net/2021/09/28/sirius-labs-chia-hackathon-winners-announced/",
         },
         {
           content:
             "SINSO received Crust Grant for applying SINSO Getway to develop an industry standard medical image reading, storage and display system.",
           source: "Source",
+          hrefs:
+            "https://medium.com/crustnetwork/crust-project-development-july-19-july-25-3f07465cf026",
         },
         {
           content:
-            "LongHash Ventures accelerator unveils 11 startups in latest cohort,SINSO is one of them.",
+            "LongHash Ventures accelerator unveils 11 startups in latest cohort; SINSO is one of them.",
           source: "Source",
+          hrefs:
+            "https://www.techinasia.com/longhash-venturespowered-accelerator-unveils-11-startups-deliver-web-30",
         },
         {
           content:
-            "SINSO entered the finals of the Filecoin Frontier Accelerator (FFA). qarnered the 11th spot of the 1st FFA Grant.",
+            "SINSO entered the finals of the Filecoin Frontier Accelerator (FFA), garnered the 11th spot of the 1st FFA Grant.",
           source: "Source",
+          hrefs: "https://decrypt.co/resources/filecoin",
         },
       ],
     },

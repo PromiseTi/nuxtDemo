@@ -5,33 +5,100 @@
 -->
 <template>
   <div>
-    <div class="padd-tb-ba text-center">
-      <h1 class="margin-bottom-liu">{{ obj.hs1 }}</h1>
-      <div class="lin-height-2 fontSize-14">
-        <p>{{ obj.son1 }}</p>
-        <p>{{ obj.son2 }}</p>
-        <p class="margin-bottom-qi">{{ obj.son3 }}</p>
-        <p>{{ obj.ss1 }}</p>
-        <p>{{ obj.ss2 }}</p>
-        <p>{{ obj.ss3 }}</p>
+    <div class="pcSonior">
+      <div class="padd-tb-ba text-center">
+        <h1 class="margin-bottom-liu">{{ obj.hs1 }}</h1>
+        <div class="lin-height-2 fontSize-14">
+          <p>{{ obj.son1 }}</p>
+          <p>{{ obj.son2 }}</p>
+          <p class="margin-bottom-qi">{{ obj.son3 }}</p>
+          <p>{{ obj.ss1 }}</p>
+          <p>{{ obj.ss2 }}</p>
+          <p>{{ obj.ss3 }}</p>
+        </div>
+        <NuxtLink
+          :to="
+            localePath({
+              name: 'member',
+            })
+          "
+          class="marlrAuto margin-tb-xl widbutt"
+          >Apply Now</NuxtLink
+        >
+      </div>
+      <div class="sonsCont">
+        <div class="widthSma flex flex-wrap marlrAuto">
+          <div
+            v-for="(item, index) in obj.list"
+            :key="index"
+            class="sonItem"
+            :class="index % 2 == 0 && 'sonMar'"
+          >
+            <h2 class="margin-bottom">{{ item.a }}</h2>
+            <div
+              v-for="itemm in item.b"
+              :key="itemm"
+              class="lin-height-2 fontSize-14"
+            >
+              <p>{{ itemm }}</p>
+            </div>
+          </div>
+        </div>
+        <NuxtLink
+          :to="
+            localePath({
+              name: 'member',
+            })
+          "
+          class="marlrAuto margin-tb-xl widbutt"
+          >Apply Now</NuxtLink
+        >
       </div>
     </div>
-    <div class="sonsCont">
-      <div class="widthSma flex flex-wrap marlrAuto">
-        <div
-          v-for="(item, index) in obj.list"
-          :key="index"
-          class="sonItem"
-          :class="index % 2 == 0 && 'sonMar'"
+    <div class="mobSonior">
+      <div class="padding-tb mobCont text-center">
+        <h1 class="margin-bottom">{{ obj.hs1 }}</h1>
+        <div class="lin-height-2 fontSize-14">
+          <p class="margin-bottom">{{ obj.son1 }} {{ obj.son2 }}</p>
+          <p class="margin-bottom">
+            {{ obj.son3 }} {{ obj.ss1 }} {{ obj.ss2 }}{{ obj.ss3 }}
+          </p>
+        </div>
+        <NuxtLink
+          :to="
+            localePath({
+              name: 'member',
+            })
+          "
+          class="marlrAuto margin-tb-xl widbutt"
+          >Apply Now</NuxtLink
         >
-          <h2 class="margin-bottom">{{ item.a }}</h2>
+      </div>
+      <div class="sonsCont" style="padding-bottom: 40px">
+        <div class="marlrAuto mobCont">
           <div
-            v-for="itemm in item.b"
-            :key="itemm"
-            class="lin-height-2 fontSize-14"
+            v-for="(item, index) in obj.list"
+            :key="index"
+            class="mobSonItem"
           >
-            <p>{{ itemm }}</p>
+            <h3 class="margin-bottom-sm coloBls">{{ item.a }}</h3>
+            <div
+              v-for="itemm in item.b"
+              :key="itemm"
+              class="lin-height-2 fontSize-14"
+            >
+              <p>{{ itemm }}</p>
+            </div>
           </div>
+          <NuxtLink
+            :to="
+              localePath({
+                name: 'member',
+              })
+            "
+            class="marlrAuto margin-tb-xl widbutt"
+            >Apply Now</NuxtLink
+          >
         </div>
       </div>
     </div>
@@ -107,6 +174,27 @@ export default {
 };
 </script>
 <style scoped>
+.pcSonior {
+  display: block;
+}
+.mobSonior {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .pcSonior {
+    display: none;
+  }
+  .mobSonior {
+    display: block;
+  }
+  .mobSonItem {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px 1px rgba(163, 175, 178, 0.2);
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+}
 .sonItem {
   background-color: #ffffff;
   border-radius: 10px;

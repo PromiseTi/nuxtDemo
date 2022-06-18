@@ -15,7 +15,10 @@
               v-for="(item, index) in heads"
               :key="index"
               class="fontsix"
-              :class="'fontS' + index"
+              :class="[
+                'fontS' + index,
+                item.rot.includes($route.path) ? 'coloBls' : '',
+              ]"
               :to="
                 localePath({
                   name: item.name,
@@ -23,30 +26,25 @@
               "
             >
               {{ item.t1 }}
-              <div class="menu-nav-first-ab about3">
+              <!-- <a :class="item.rot.includes($route.path) && 'coloBls'"></a> -->
+              <!-- <div class="menu-nav-first-ab about3">
                 <NuxtLink :to="localePath({ name: 'ecoPartnerDetail' })"
                   >Filecoin动态</NuxtLink
                 >
                 <NuxtLink :to="localePath({ name: 'ecoPartner' })"
-                  >生态伙伴展示页</NuxtLink
+                  >Ecosystem Partners</NuxtLink
                 >
-              </div>
+              </div> -->
               <div class="menu-nav-first-ab about4">
                 <NuxtLink :to="localePath({ name: 'dac' })"
-                  >DAC Introduce</NuxtLink
+                  >Introduction</NuxtLink
                 >
-                <NuxtLink :to="localePath({ name: 'member' })">注册</NuxtLink>
+                <NuxtLink :to="localePath({ name: 'member' })"
+                  >Ambassador Program</NuxtLink
+                >
                 <NuxtLink :to="localePath({ name: 'sonior' })">Sonior</NuxtLink>
               </div>
-              <div class="menu-nav-first-ab about">
-                <a
-                  @click="
-                    hrefCli(
-                      'https://sinsonetwork.medium.com/why-sinso-blaze-the-path-to-web3-0-c8592c6d335'
-                    )
-                  "
-                  >Why SINSO</a
-                >
+              <div class="menu-nav-first-ab about6">
                 <NuxtLink to="news">News & Updates</NuxtLink>
                 <NuxtLink to="newsletter">NewsLetter</NuxtLink>
                 <NuxtLink to="team">Team</NuxtLink>
@@ -74,15 +72,51 @@
           </div>
           <div class="modal-layer-3">
             <ul>
-              <li><a class="a-link" href="index.html">首页</a></li>
-              <li>
-                <a class="a-link" href="talent-outsourcing.html">人才外包</a>
+              <li v-for="(item, index) in heads" :key="index">
+                <NuxtLink
+                  v-if="![4, 6].includes(index)"
+                  :class="[item.rot.includes($route.path) ? 'coloBls' : '']"
+                  :to="
+                    localePath({
+                      name: item.name,
+                    })
+                  "
+                  >{{ item.t1 }}</NuxtLink
+                >
+                <a
+                  v-else
+                  :class="[
+                    item.rot.includes($route.path) ? 'coloBls' : '',
+                    [4, 6].includes(index) ? 'moblie-select' : '',
+                    choIndex === index ? 'selectShow' : '',
+                  ]"
+                  @click="goTo(index)"
+                  >{{ item.t1 }}</a
+                >
+                <div
+                  class="moblie-select-list"
+                  :class="choIndex == 4 && index == 4 && 'selectList'"
+                >
+                  <NuxtLink :to="localePath({ name: 'dac' })"
+                    >Introduction</NuxtLink
+                  >
+                  <NuxtLink :to="localePath({ name: 'member' })"
+                    >Ambassador Program</NuxtLink
+                  >
+                  <NuxtLink :to="localePath({ name: 'sonior' })"
+                    >Sonior</NuxtLink
+                  >
+                </div>
+                <div
+                  class="moblie-select-list"
+                  :class="choIndex == 6 && index == 6 && 'selectList'"
+                >
+                  <NuxtLink to="news">News & Updates</NuxtLink>
+                  <NuxtLink to="newsletter">NewsLetter</NuxtLink>
+                  <NuxtLink to="team">Team</NuxtLink>
+                </div>
               </li>
-              <li><a class="a-link" href="rpo.html">招聘流程外包</a></li>
-              <li><a class="a-link" href="payroll-tax.html">薪税保服务</a></li>
-              <li><a class="a-link" href="bpo.html">业务外包</a></li>
-              <li><a class="a-link" href="javascript:;">职池工作</a></li>
-              <li><a class="a-link" href="service-cases.html">服务案例</a></li>
+              <!-- <li><a class="a-link" href="javascript:;">职池工作</a></li>
               <li>
                 <a
                   class="moblie-select"
@@ -98,18 +132,7 @@
                   <a href="news.html?index=1">企业新闻</a>
                   <a href="news.html?index=2">企业追踪</a>
                 </div>
-              </li>
-              <li>
-                <a class="moblie-select" href="javascript:;">关于宝航</a>
-                <div class="moblie-select-list">
-                  <a href="about.html?index=0">宝航介绍</a>
-                  <a href="about.html?index=1">管理团队</a>
-                  <a href="about.html?index=2">组织架构</a>
-                  <a href="about.html?index=3">企业风采</a>
-                  <a href="about.html?index=4">合作客户</a>
-                  <a href="about.html?index=5">联系我们</a>
-                </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -128,13 +151,21 @@ export default {
       isFlag: false,
       choIndex: "",
       heads: [
-        { t1: this.$t("had.li1"), name: "index" },
-        { t1: this.$t("had.li2"), name: "product" },
-        { t1: this.$t("had.li3"), name: "docs" },
-        { t1: this.$t("had.li4"), name: "index" },
-        { t1: this.$t("had.li5"), name: "index" },
-        { t1: this.$t("had.li6"), name: "tokens" },
-        { t1: this.$t("had.li7"), name: "" },
+        { t1: this.$t("had.li1"), name: "index", rot: ["/"] },
+        { t1: this.$t("had.li2"), name: "product", rot: ["/product"] },
+        { t1: this.$t("had.li3"), name: "docs", rot: ["/docs"] },
+        { t1: this.$t("had.li4"), name: "ecoPartner", rot: ["/ecoPartner"] },
+        {
+          t1: this.$t("had.li5"),
+          name: "",
+          rot: ["/dac", "/member", "/sonior"],
+        },
+        { t1: this.$t("had.li6"), name: "tokens", rot: ["/tokens"] },
+        {
+          t1: this.$t("had.li7"),
+          name: "",
+          rot: ["/news", "/newsletter", "/team"],
+        },
       ],
     };
   },
@@ -145,6 +176,17 @@ export default {
     },
     goJi(num) {
       num == this.choIndex ? (this.choIndex = "") : (this.choIndex = num);
+    },
+    goTo(num) {
+      console.log(num);
+      if ([4, 6].includes(num)) {
+        num == this.choIndex ? (this.choIndex = "") : (this.choIndex = num);
+      }
+    },
+  },
+  watch: {
+    $route() {
+      this.isFlag = false;
     },
   },
   created() {},
@@ -259,7 +301,7 @@ export default {
     max-height: 200px;
   }
   .moblie-select-list a {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 .container {
@@ -293,9 +335,9 @@ header {
   margin-right: 40px;
 }
 /* -- */
-.fontS3:hover .about3 {
+/* .fontS3:hover .about3 {
   display: block;
-}
+} */
 .fontS4:hover .about4 {
   display: block;
 }

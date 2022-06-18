@@ -5,7 +5,7 @@
 -->
 <template>
   <div>
-    <div class="padd-tb-ba malrCont">
+    <div class="padd-tb-ba malrCont pcLett">
       <h1 class="margin-bottom-qi text-center wow fadeInUp">Newsletter</h1>
       <div
         class="margin-bottom-xl wow fadeInUp"
@@ -25,12 +25,42 @@
             <p class="fontSize-14 colo999">{{ item.e }}</p>
           </div>
           <img v-if="item.f" :src="item.f" class="pcImg1" />
+          <video v-if="item.g" :src="item.g" controls="controls" class="pcImg1">
+            您的浏览器不支持 video 标签。
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="padding-tb mobCont mobLett">
+      <h2 class="margin-bottom text-center wow fadeInUp">Newsletter</h2>
+      <div
+        class="margin-bottom-xl wow fadeInUp"
+        v-for="(item, index) in list"
+        :key="index"
+      >
+        <div class="docCont">
+          <h4 class="margin-bottom-xs">{{ item.a }}</h4>
+          <div class="flex align-center">
+            <p class="margin-right-sm letts">{{ item.b }}</p>
+            <p class="fontSize-14 colo999">{{ item.c }}</p>
+          </div>
+          <p class="lin-height-2 margin-tb-xs fontSize-14">
+            {{ item.d }}
+          </p>
+          <p class="fontSize-14 colo999">{{ item.e }}</p>
 
+          <img
+            class="margin-top-sm"
+            style="width: 100%"
+            v-if="item.f"
+            :src="item.f"
+          />
           <video
+            class="margin-top-sm"
             v-if="item.g"
-            src="https://bafybeihb3nvzbc6nlmlyeiynw24zx4qovexl274yhcdlbrb4yuo656uw54.ipfs.dweb.link/sinso1.mp4"
+            :src="item.g"
             controls="controls"
-            class="pcImg1"
+            style="width: 100%"
           >
             您的浏览器不支持 video 标签。
           </video>
@@ -88,7 +118,7 @@ export default {
           d: "This week, the R&D team continuously focused work on SINSO Distributed Cache Testnet. The current number of accessed nodes in Testnet has reached 1977. The R&D team has carried out...",
           e: "16 hours ago",
           f: "",
-          g: "https://bafybeiavnxa6k76wjpjedljka52xlda4dlmyuwkhoeqe4uuxgbjrajwqau.ipfs.dweb.link/sinso1.mp4",
+          g: "https://bafybeihb3nvzbc6nlmlyeiynw24zx4qovexl274yhcdlbrb4yuo656uw54.ipfs.dweb.link/sinso1.mp4",
         },
         {
           a: "SINSO Weekly Newsletter",
@@ -97,7 +127,7 @@ export default {
           d: "This week, SINSO R&D team continued to focus team work on SINSO Distributed Cache Testnet, whose current nodes have reached 1,360. SINSO team addressed problems like the...",
           e: "16 hours ago",
           f: "",
-          g: "https://bafybeiavnxa6k76wjpjedljka52xlda4dlmyuwkhoeqe4uuxgbjrajwqau.ipfs.dweb.link/sinso2.mp4",
+          g: "https://bafybeiauhvfcldsxejk37j3tapfnuk6cbetfedl6xfiuiakxr37jdvikw4.ipfs.dweb.link/sinso2.mp4",
         },
         {
           a: "SINSO Weekly Newsletter",
@@ -106,7 +136,7 @@ export default {
           d: "This week, SINSO continued to focus R&D work on the Distributed Cache Testnet, optimized deployment of the data ports through which some cache nodes connected to users, and prepared for the...",
           e: "16 hours ago",
           f: "",
-          g: "https://bafybeiavnxa6k76wjpjedljka52xlda4dlmyuwkhoeqe4uuxgbjrajwqau.ipfs.dweb.link/sinso3.mp4",
+          g: "https://bafybeid56dvhtgsdhwhkxwhvd3kngsnf26qpso22rz6kvctkc4w5mzxf7a.ipfs.dweb.link/sinso3.mp4",
         },
         {
           a: "SINSO Weekly Newsletter",
@@ -142,6 +172,20 @@ export default {
 };
 </script>
 <style scoped>
+.pcLett {
+  display: block;
+}
+.mobLett {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .pcLett {
+    display: none;
+  }
+  .mobLett {
+    display: block;
+  }
+}
 .docCont {
   box-shadow: 0px 2px 10px 1px rgba(163, 175, 178, 0.2);
   border-radius: 10px;

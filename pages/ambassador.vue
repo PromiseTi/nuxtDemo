@@ -1,5 +1,5 @@
 <!--
-* ambassador
+* ambassador    dashi
 * @author （cgt）
 * @date 2020/7/30
 -->
@@ -8,7 +8,6 @@
     <div class="padd-tb-ba text-center">
       <h1>SINSO Ambassador Registration</h1>
     </div>
-
     <div class="marlrAuto margin-bottom-qi ambCont">
       <client-only>
         <el-form
@@ -892,5 +891,25 @@ h2 {
   height: 44px;
   font-size: 18px;
   margin: 50px auto 100px auto;
+}
+@media screen and (max-width: 600px) {
+  .padd-tb-ba {
+    padding: 30px 0px;
+  }
+  .ambCont {
+    width: 96vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .amb {
+    display: block;
+  }
+  ::v-deep .amb .el-input {
+    width: 100%;
+  }
+  ::v-deep .el-dialog {
+    margin-top: 40vh !important;
+    width: 90vw !important;
+  }
 }
 </style>

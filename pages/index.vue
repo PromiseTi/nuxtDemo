@@ -6,13 +6,13 @@
           <h1 style="font-size: 50px" class="margin-bottom">
             {{ $t("a.h1") }}
           </h1>
-          <p class="margin-bottom-sm">{{ $t("a.h2") }}</p>
-          <p class="margin-bottom-sm">{{ $t("a.h3") }}</p>
+          <h2 class="margin-bottom-sm">{{ $t("a.h2") }}</h2>
+          <h2 class="margin-bottom-sm">{{ $t("a.h3") }}</h2>
           <p>
             <a class="lians">{{ $t("a.h4") }}</a>
           </p>
         </div>
-        <img class="banner" src="../static/index/img-home-banner@2x.png" />
+        <img class="banner" src="/index/img-home-banner@2x.png" />
       </div>
       <div class="backF3f5 padd-tb-ba">
         <div class="malrCont">
@@ -22,7 +22,7 @@
         <div class="flex flex-wrap malrCont">
           <div
             v-for="(item, index) in $t('a.list')"
-            class="poCont"
+            class="hvr-rotate poCont"
             :class="index % 2 == 0 && 'rig10'"
             :key="index"
           >
@@ -149,7 +149,7 @@
                 </div>
               </NuxtLink>
               <NuxtLink to="/">
-                <div class="flex margin-bottom-qi">
+                <div class="flex margin-bottom-xl">
                   <img class="usiImg1" src="/index/usi3.png" />
                   <div class="hvr-float-shadow usiSon">
                     <p>Testnet</p>
@@ -211,7 +211,7 @@
                     <div>
                       <img src="/index/dianTrue.png" />
                       <p
-                        :class="index == 1 && 'coloBls'"
+                        :class="index == tabsIndex && 'coloBls'"
                         class="fontBlod fontSize-20"
                       >
                         {{ item.a }}
@@ -220,7 +220,8 @@
                   </div>
                   <div
                     class="lin-height-2 raoJiu"
-                    :class="index == 1 && 'roBjo'"
+                    :class="index == tabsIndex && 'roBjo'"
+                    @click="tabsIndex = index"
                   >
                     <div class="margin-bottom">
                       <p v-for="itemm in item.b" :key="itemm">{{ itemm }}</p>
@@ -233,7 +234,11 @@
               <div class="swiper-button-next swipe-next2"></div>
             </client-only>
           </div>
-          <p class="marlrAuto margin-tb-xl widbutt">
+          <p
+            class="marlrAuto margin-tb-xl hvr-wobble-horizontal widbutt"
+            style="display: flex"
+            @click="hrefCli('https://github.com/sinsoio')"
+          >
             <img src="/index/githubs.png" /> {{ $t("a.toagit") }}
           </p>
         </div>
@@ -243,7 +248,7 @@
           <h1 class="text-center margin-bottom-qi">{{ $t("a.edyh") }}</h1>
           <div class="flex flex-wrap">
             <img
-              class="byImg"
+              class="hvr-grow-shadow byImg"
               :class="(index + 1) % 5 != 0 && 'bymar'"
               v-for="(item, index) in 17"
               :key="index"
@@ -259,9 +264,11 @@
             <div
               v-for="(item, index) in $t('a.newList')"
               :key="index"
-              class="newItem"
+              class="hvr-float-shadow newItem"
+              @click="hrefCli(item.c)"
             >
-              <div class="margin-bottom-sm neback"></div>
+              <img class="neback" :src="'/index/bot' + index + '.jpg'" />
+
               <div class="lin-height-18 fontDize-14">
                 <p class="colo999">{{ item.a }}</p>
                 <p class="margin-bottom-xs">{{ item.b }}</p>
@@ -272,7 +279,282 @@
       </div>
     </div>
     <div class="mobIndex">
-      <div v-for="item in 1000" :key="item">{{ item }}</div>
+      <div class="text-center mobTop">
+        <img style="width: 100%" src="/index/img-home-banner@2x.png" />
+        <h1 class="margin-tb-sm">{{ $t("a.h1") }}</h1>
+        <h3>{{ $t("a.h2") }}</h3>
+        <h3 class="margin-top-xs margin-bottom-sm">{{ $t("a.h3") }}</h3>
+        <p>
+          <a class="lians">{{ $t("a.h4") }}</a>
+        </p>
+      </div>
+      <div class="backF3f5 padding-tb-sm">
+        <div class="text-center lin-height-16 margin-bottom-sm">
+          <h3>{{ $t("a.pow1") }}</h3>
+          <h3>{{ $t("a.pow2") }}</h3>
+        </div>
+        <div class="flex flex-wrap mobCont">
+          <div
+            v-for="(item, index) in $t('a.list')"
+            class="mobPo"
+            :class="index % 2 == 0 && 'moRig10'"
+            :key="index"
+          >
+            <img class="mobPoImgs" :src="'/index/pew' + index + '.png'" />
+
+            <h2 class="margin-bottom-xs">{{ item.powt1 }}</h2>
+            <div class="lin-height-18 fontSize-14">
+              <p>{{ item.powt2 }}</p>
+              <p>{{ item.powt3 }}</p>
+              <p>{{ item.powt4 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="backFFF padding-tb-sm">
+        <div class="text-center lin-height-18 margin-bottom-sm">
+          <h3>{{ $t("a.infoh1") }}</h3>
+          <h3>{{ $t("a.infoh2") }}</h3>
+        </div>
+        <div
+          v-for="(item, index) in $t('a.info1')"
+          class="marlrAuto mobIn"
+          :key="index"
+        >
+          <h2>
+            <countTo
+              ref="example1"
+              separator=""
+              :start-val="0"
+              :end-val="item.a"
+              :duration="2000"
+            />
+          </h2>
+          <p class="margin-top-xs">{{ item.b }}</p>
+        </div>
+        <div
+          v-for="item in $t('a.info2')"
+          class="marlrAuto mobIn"
+          :key="item.a"
+        >
+          <h2>
+            <countTo
+              ref="example1"
+              separator=""
+              :start-val="0"
+              :end-val="item.a"
+              :duration="2000"
+            />
+          </h2>
+          <p class="margin-top-xs">{{ item.b }}</p>
+        </div>
+      </div>
+
+      <div class="backF3f5 padding-tb-sm">
+        <div class="mobCont">
+          <h3 class="text-center margin-bottom-xs lin-height-18">
+            {{ $t("a.usi1") }}
+          </h3>
+          <div class="mobUsiLeft">
+            <h3 class="usleftTop">SINSO GETWAY API</h3>
+            <div class="lin-height-18 fontSize-12 usleftBott">
+              <p>
+                new_element = document.<span class="coloBlu">createElement</span
+                >('script')
+              </p>
+              <p>
+                new_element.<span class="coloBlu">setAttribute</span>('type',
+                'text/javascript')
+              </p>
+              <p>
+                new_element.<span class="coloBlu">setAttribute</span>('src',
+                'jQuery1.11.3.min.js')
+              </p>
+              <p>
+                document.body.<span class="coloBlu">appendChild</span
+                >(new_element)
+              </p>
+              <p>
+                <span class="coloRe">const</span> $contentType = 'image/jpg'
+              </p>
+              <p><span class="coloRe">const</span> $token = ''</p>
+              <p><span class="coloRe">const</span> $fileName = 'phone.jpg'</p>
+              <p>
+                <span class="coloRe">const</span> $url =
+                'https://api-ap-seoul-1.getway.sinso.io'
+              </p>
+              <p>
+                <span class="coloRe">const</span> $data =
+                '@/C:/Users/HASEE/Desktop/phone.jpg'
+              </p>
+              <p>
+                function upload($contentType,$token, $fileName, $url, $data) {
+              </p>
+              <p>$.ajax({</p>
+              <p>url: `${$url}/v1/upload?name=${$fileName}`,</p>
+              <p>type: 'POST',</p>
+              <p>dataType:'json',</p>
+              <p>headers: {</p>
+              <p>Token: $token, 'Content-Type': $contentType,</p>
+              <p>},</p>
+              <p>data: $data,</p>
+              <p>success: (res) => {</p>
+              <p><span class="coloRe">if</span> (res.code == 200) {</p>
+              <p>console.log(res)</p>
+              <p>}</p>
+              <p>}</p>
+              <p>})</p>
+              <p>}</p>
+            </div>
+          </div>
+          <div class="flex align-center justify-between usiRight">
+            <div>
+              <NuxtLink to="/">
+                <div class="flex margin-bottom-sm">
+                  <img class="mobUsiImg1" src="/index/usi5.png" />
+                  <div class="mobUsiSon">
+                    <p>Dev docs</p>
+                    <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
+                  </div>
+                </div>
+              </NuxtLink>
+              <NuxtLink to="/">
+                <div class="flex">
+                  <img class="mobUsiImg1" src="/index/usi3.png" />
+                  <div class="mobUsiSon">
+                    <p>Testnet</p>
+                    <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
+                  </div>
+                </div>
+              </NuxtLink>
+            </div>
+            <img class="mobUsiImg3" src="/index/usi2.png" />
+          </div>
+        </div>
+      </div>
+      <!-- -- -->
+      <div class="padding-tb mobEcolCont">
+        <div class="">
+          <h1 class="coloFFF text-center margin-bottom">
+            {{ $t("a.byh") }}
+          </h1>
+          <client-only>
+            <div class="mobCont">
+              <swiper class="swiper" :options="mobswiperOption1">
+                <swiper-slide
+                  id="elItem"
+                  class="swiper-slide"
+                  v-for="(item, index) in $t('a.byList')"
+                  :key="index"
+                >
+                  <img :src="'/index/ol' + index + '.png'" />
+                  <div class="lin-height-18">
+                    <p>{{ item.a1 }}</p>
+                    <p>{{ item.a2 }}</p>
+                    <p>{{ item.a3 }}</p>
+                    <p>{{ item.a4 }}</p>
+                  </div>
+                  <el-button round class="margin-top">Learn more</el-button>
+                </swiper-slide>
+                <div
+                  class="swiper-pagination swiper-pagination-white"
+                  slot="pagination"
+                ></div>
+                <div
+                  class="swiper-button-prev mobPer1"
+                  slot="button-prev"
+                ></div>
+                <div
+                  class="swiper-button-next mobNext1"
+                  slot="button-next"
+                ></div>
+              </swiper>
+            </div>
+          </client-only>
+        </div>
+      </div>
+      <div class="backF3f5 padding-tb">
+        <div class="">
+          <h3 class="text-center margin-bottom">{{ $t("a.roah") }}</h3>
+          <div class="roaCont">
+            <client-only>
+              <swiper class="swiper" :options="mobswiperOption2">
+                <swiper-slide
+                  v-for="(item, index) in $t('a.roaList')"
+                  :key="index"
+                >
+                  <div class="roaPos">
+                    <div>
+                      <img src="/index/dianTrue.png" />
+                      <p
+                        :class="index == tabsIndex && 'coloBls'"
+                        class="fontBlod fontSize-20"
+                      >
+                        {{ item.a }}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="lin-height-2 raoJiu"
+                    style="width: 100%; height: auto"
+                    :class="index == tabsIndex && 'roBjo'"
+                    @click="tabsIndex = index"
+                  >
+                    <div class="margin-bottom">
+                      <p v-for="itemm in item.b" :key="itemm">{{ itemm }}</p>
+                    </div>
+                    <p v-for="itemm in item.c" :key="itemm">{{ itemm }}</p>
+                  </div>
+                </swiper-slide>
+              </swiper>
+              <div class="swiper-button-prev swipe-prev2"></div>
+              <div class="swiper-button-next swipe-next2"></div>
+            </client-only>
+          </div>
+          <p
+            class="marlrAuto margin-top-xl widbutt"
+            @click="hrefCli('https://github.com/sinsoio')"
+          >
+            <img src="/index/githubs.png" /> {{ $t("a.toagit") }}
+          </p>
+        </div>
+      </div>
+      <div class="backF3f5 padding-tb">
+        <div class="mobCont">
+          <h3 class="text-center margin-bottom">{{ $t("a.edyh") }}</h3>
+          <div class="flex flex-wrap">
+            <img
+              style="width: 32%"
+              class="margin-bottom-xs"
+              :class="(index + 1) % 3 != 0 && 'bymar'"
+              v-for="(item, index) in 17"
+              :key="index"
+              :src="'/index/by' + index + '.png'"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="backF3f5 padding-tb newCont">
+        <div class="mobCont">
+          <h1 class="text-center margin-bottom">{{ $t("a.newh") }}</h1>
+          <div class="flex flex-wrap">
+            <div
+              v-for="(item, index) in $t('a.newList')"
+              :key="index"
+              class="margin-bottom-xs mobnewItem"
+              :class="index % 2 == 0 && 'mobNewRights'"
+              @click="hrefCli(item.c)"
+            >
+              <img class="neback" :src="'/index/bot' + index + '.jpg'" />
+
+              <div class="lin-height-18 fontDize-14">
+                <p class="colo999">{{ item.a }}</p>
+                <p class="margin-bottom-xs">{{ item.b }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -282,7 +564,8 @@ export default {
   name: "index",
   data() {
     return {
-      //轮播
+      tabsIndex: 1, //
+      //pc 1
       swiperOption1: {
         slidesPerView: 4,
         spaceBetween: 30,
@@ -295,9 +578,31 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
-      //轮播
+      //pc 2
       swiperOption2: {
         slidesPerView: 4,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swipe-next2",
+          prevEl: ".swipe-prev2",
+        },
+      },
+      //mob 1
+      mobswiperOption1: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      //mob 2
+      mobswiperOption2: {
+        slidesPerView: 1,
         spaceBetween: 30,
         navigation: {
           nextEl: ".swipe-next2",
@@ -323,12 +628,20 @@ export default {
         }
       },
     }).init();
-    console.log(this);
-    console.log(this.$i18n);
+    // console.log(this);
+    // console.log(this.$i18n);
+  },
+  methods: {
+    hrefCli(item) {
+      item && (window.location.href = item);
+    },
   },
 };
 </script>
 <style scoped>
+h2 > span {
+  font-size: 28px;
+}
 .pcIndex {
   display: block;
 }
@@ -341,6 +654,84 @@ export default {
   }
   .mobIndex {
     display: block;
+  }
+  .mobTop {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .mobPo {
+    width: 47%;
+    background-color: #e8edf1;
+    border-radius: 10px;
+    padding: 10px 4px;
+    margin-bottom: 20px;
+  }
+  .moRig10 {
+    margin-right: 4%;
+  }
+  .mobPoImgs {
+    height: 40px;
+    margin: 10px 0px;
+  }
+  .mobIn {
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(135deg, #077fe3, #24beed);
+    width: 80%;
+    padding: 20px 0px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+  .mobUsiLeft {
+    border: 0.5px solid #e5e5e5;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .mobUsiImg1 {
+    width: 20px;
+  }
+  .mobUsiImg2 {
+    height: 8px;
+  }
+  .mobUsiImg3 {
+    width: 40vw;
+  }
+  .mobUsiSon {
+    font-size: 14px;
+    color: #00abeb;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    border-bottom: 1px solid #00abeb;
+  }
+  .mobEcolCont {
+    background: url(/index/img-homes.png) no-repeat 50%;
+  }
+  .mobPer1 {
+    top: auto;
+    left: 20px;
+    bottom: 0px;
+    width: auto;
+  }
+  .mobNext1 {
+    top: auto;
+    right: 20px;
+    bottom: 0px;
+    width: auto;
+  }
+  .mobnewItem {
+    background-color: #fff;
+    padding: 8px;
+    width: 48%;
+    border-radius: 8px;
+  }
+  .mobNewRights {
+    margin-right: 2%;
   }
 }
 .swipes {
@@ -356,7 +747,7 @@ export default {
   border-bottom: 1px solid #333333;
 }
 .poCont {
-  width: 42.5%;
+  width: 47%;
   background-color: #e8edf1;
   height: 300px;
   margin-bottom: 70px;
@@ -364,7 +755,7 @@ export default {
   border-radius: 20px;
 }
 .rig10 {
-  margin-right: 5%;
+  margin-right: 6%;
 }
 .widDi {
   height: 60px;
@@ -415,6 +806,7 @@ export default {
   border-radius: 10px;
   padding: 14px;
   font-size: 14px;
+  cursor: pointer;
 }
 .roBjo {
   border: none;
@@ -437,11 +829,14 @@ export default {
   background-color: #ffffff;
   padding: 20px;
   width: 24%;
+  cursor: pointer;
 }
 .neback {
-  background-color: #b7cad7;
-  border-radius: 8px;
-  height: 140px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  /* height: 140px; */
+  margin-bottom: 10px;
 }
 .usiLeft {
   border: 0.5px solid #e5e5e5;
@@ -450,11 +845,9 @@ export default {
   overflow: hidden;
 }
 .usleftTop {
-  height: 80px;
   background-color: #252c2f;
   color: #ffffff;
-  padding-left: 20px;
-  line-height: 80px;
+  padding: 20px 0px 20px 20px;
 }
 .usleftBott {
   padding: 20px;
@@ -464,7 +857,7 @@ export default {
 }
 .usiRight {
   padding-top: 60px;
-  width: 400px;
+  /* width: 400px; */
 }
 .usiImg1 {
   width: 30px;
@@ -473,7 +866,7 @@ export default {
   height: 10px;
 }
 .usiImg3 {
-  height: 200px;
+  height: 230px;
 }
 .usiSon {
   color: #00abeb;

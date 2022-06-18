@@ -35,14 +35,32 @@
               class="pointer liCont"
               @click="handles(item)"
             >
-              <img class="footImg" :src="'/index/foo' + index + '.png'" />
+              <img
+                class="footImg"
+                :src="'/index/foot' + (index + 2) + '.png'"
+              />
               <a class="colo222">{{ item }}</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="mobFoot"></div>
+    <div class="mobFoot">
+      <h3 class="margin-top-sm margin-bottom-xs text-center">Contact Us</h3>
+      <div class="flex justify-center margin-bottom-sm">
+        <div class="mobKus">partner@sinso.io</div>
+        <client-only> <el-button type="primary">Copy</el-button></client-only>
+      </div>
+      <div class="flex align-center justify-center">
+        <img
+          @click="handles(item)"
+          :src="'/index/foot' + index + '.png'"
+          v-for="(item, index) in li3"
+          :key="item"
+          class="mobfImgs"
+        />
+      </div>
+    </div>
   </footer>
 </template>
 
@@ -55,6 +73,7 @@ export default {
     return {
       li1: ["https://twitter.com/sinsonetwork", "https://t.me/sinsonetwork"],
       li2: ["https://sinsonetwork.medium.com", "https://discord.gg/m8eqcHJ5ur"],
+      li3: [],
     };
   },
   computed: {},
@@ -64,7 +83,9 @@ export default {
     },
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.li3 = [...this.li1, ...this.li2];
+  },
 };
 </script>
 <style scoped>
@@ -80,6 +101,21 @@ export default {
   }
   .mobFoot {
     display: block;
+  }
+  .mobKus {
+    width: 180px;
+    background-color: #ffffff;
+    color: #333333;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  .mobfImgs {
+    height: 30px;
+    padding: 6px;
+    margin: 0px 5px;
   }
 }
 footer {

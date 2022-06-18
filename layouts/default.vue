@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Heard v-if="$route.path" />
+    <Heard />
     <nuxt />
     <Footer />
   </div>

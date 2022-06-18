@@ -5,46 +5,84 @@
 -->
 <template>
   <div>
-    <div class="text-center kenCont">
-      <h1>{{ $t("f.tokh") }}</h1>
-      <div class="lin-height-2">
-        <p>{{ $t("f.tokp1") }}</p>
-        <p>{{ $t("f.tokp2") }}</p>
-        <p>{{ $t("f.tokp3") }}</p>
-      </div>
-    </div>
-    <div class="padd-tb-ba backF3f5">
-      <div class="malrCont">
-        <div class="text-center lin-height-18 margin-bottom-qi">
-          <h1 class="margin-bottom-xl">{{ $t("f.tokyh") }}</h1>
-          <p>{{ $t("f.toky1") }}</p>
-          <p>{{ $t("f.toky2") }}</p>
+    <div class="pcToken">
+      <div class="text-center kenCont">
+        <h1>{{ $t("f.tokh") }}</h1>
+        <div class="lin-height-2">
+          <p>{{ $t("f.tokp1") }}</p>
+          <p>{{ $t("f.tokp2") }}</p>
+          <p>{{ $t("f.tokp3") }}</p>
         </div>
-        <div class="flex flex-wrap">
-          <div
-            v-for="(item, index) in $t('f.toList')"
-            :key="index"
-            class="flex kenItem"
-          >
-            <img src="/tokens/zhuangshi.png" class="kenPos" />
-            <p>{{ item }}</p>
+      </div>
+      <div class="padd-tb-ba backF3f5">
+        <div class="malrCont">
+          <div class="text-center lin-height-18 margin-bottom-qi">
+            <h1 class="margin-bottom-xl">{{ $t("f.tokyh") }}</h1>
+            <p>{{ $t("f.toky1") }}</p>
+            <p>{{ $t("f.toky2") }}</p>
+          </div>
+          <div class="flex flex-wrap">
+            <div
+              v-for="(item, index) in $t('f.toList')"
+              :key="index"
+              class="flex kenItem"
+            >
+              <img src="/tokens/zhuangshi.png" class="kenPos" />
+              <p>{{ item }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="padd-tb-ba malrCont">
-      <div class="lin-height-18 margin-bottom-qi">
-        <h1 class="text-center margin-bottom-xl">{{ $t("f.toky3") }}</h1>
-        <p class="widTo">{{ $t("f.toky4") }}</p>
-        <p class="widTo">{{ $t("f.toky5") }}</p>
+      <div class="padd-tb-ba malrCont">
+        <div class="lin-height-18 margin-bottom-qi">
+          <h1 class="text-center margin-bottom-xl">{{ $t("f.toky3") }}</h1>
+          <p class="widTo">{{ $t("f.toky4") }}</p>
+          <p class="widTo">{{ $t("f.toky5") }}</p>
+        </div>
+        <div id="echart-main"></div>
       </div>
-      <div id="echart-main"></div>
+    </div>
+    <div class="mobToken overHidd">
+      <div class="text-center padding-tb kenCont" style="height: auto">
+        <h2 class="margin-bottom">{{ $t("f.tokh") }}</h2>
+        <div class="lin-height-16">
+          <p>{{ $t("f.tokp1") }}</p>
+          <p>{{ $t("f.tokp2") }}</p>
+          <p>{{ $t("f.tokp3") }}</p>
+        </div>
+      </div>
+      <div class="padding-tb backF3f5">
+        <div class="mobCont">
+          <div class="text-center lin-height-18 margin-bottom">
+            <h2 class="margin-bottom">{{ $t("f.tokyh") }}</h2>
+            <p class="fontSize-16">{{ $t("f.toky1") }}</p>
+            <p class="fontSize-16">{{ $t("f.toky2") }}</p>
+          </div>
+          <div class="">
+            <div
+              v-for="(item, index) in $t('f.toList')"
+              :key="index"
+              class="flex margin-bottom"
+            >
+              <img src="/tokens/zhuangshi.png" class="kenPos" />
+              <p>{{ item }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="padding-tb mobCont">
+        <div class="lin-height-18 margin-bottom">
+          <h1 class="text-center margin-bottom-xl">{{ $t("f.toky3") }}</h1>
+          <p class="widTo">{{ $t("f.toky4") }}</p>
+          <p class="widTo">{{ $t("f.toky5") }}</p>
+        </div>
+        <div id="echart-main2"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import echarts from "echarts"; // 引入echarts
 import * as echarts from "echarts";
 export default {
   name: "",
@@ -55,10 +93,7 @@ export default {
   },
   computed: {},
   methods: {
-    init() {
-      // 基于准备好的dom，初始化echarts实例
-      var myChart = echarts.init(document.getElementById("echart-main"));
-      // 绘制图表
+    init(myChart) {
       myChart.setOption({
         legend: {
           top: "bottom",
@@ -203,11 +238,30 @@ export default {
   },
   created() {},
   mounted() {
-    this.init();
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById("echart-main"));
+    this.init(myChart1);
+    // 绘制图表
+    var myChart2 = echarts.init(document.getElementById("echart-main2"));
+    this.init(myChart2);
   },
 };
 </script>
 <style scoped>
+.pcToken {
+  display: block;
+}
+.mobToken {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .pcToken {
+    display: none;
+  }
+  .mobToken {
+    display: block;
+  }
+}
 .kenCont {
   height: 440px;
   width: 100%;
@@ -231,6 +285,10 @@ export default {
 #echart-main {
   height: 675px;
   width: 100%;
+}
+#echart-main2 {
+  height: 400px;
+  width: auto;
 }
 .widTo {
   width: 300px;
