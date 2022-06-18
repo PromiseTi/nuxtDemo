@@ -341,7 +341,7 @@ header {
 .fontS4:hover .about4 {
   display: block;
 }
-.fontS6:hover .about {
+.fontS6:hover .about6 {
   display: block;
 }
 
