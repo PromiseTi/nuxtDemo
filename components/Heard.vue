@@ -178,7 +178,6 @@ export default {
       num == this.choIndex ? (this.choIndex = "") : (this.choIndex = num);
     },
     goTo(num) {
-      console.log(num);
       if ([4, 6].includes(num)) {
         num == this.choIndex ? (this.choIndex = "") : (this.choIndex = num);
       }

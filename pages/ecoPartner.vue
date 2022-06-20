@@ -19,19 +19,10 @@
             <p class="margin-bottom-sm">{{ item.b }}</p>
             <p class="margin-bottom-sm">{{ item.c }}</p>
           </div>
-          <NuxtLink
-            :to="
-              localePath({
-                name: 'ecoPartnerDetail',
-                query: { index },
-              })
-            "
-          >
-            <div class="usiSon">
-              <p>{{ item.d }}</p>
-              <img class="usiImg2" src="/index/img-jiantou@2x.png" />
-            </div>
-          </NuxtLink>
+          <div class="usiSon">
+            <p>{{ item.d }}</p>
+            <img class="usiImg2" src="/index/img-jiantou@2x.png" />
+          </div>
         </div>
       </div>
     </div>
@@ -49,19 +40,10 @@
             <p class="margin-bottom-sm">{{ item.b }}</p>
             <p class="margin-bottom-sm">{{ item.c }}</p>
           </div>
-          <NuxtLink
-            :to="
-              localePath({
-                name: 'ecoPartnerDetail',
-                query: { index },
-              })
-            "
-          >
-            <div class="usiSon">
-              <p>{{ item.d }}</p>
-              <img class="usiImg2" src="/index/img-jiantou@2x.png" />
-            </div>
-          </NuxtLink>
+          <div class="usiSon">
+            <p>{{ item.d }}</p>
+            <img class="usiImg2" src="/index/img-jiantou@2x.png" />
+          </div>
         </div>
       </div>
     </div>

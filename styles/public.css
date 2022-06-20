@@ -160,6 +160,12 @@ a {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+.text-ellipsis-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
 /* 阴影 */
 .minsmallShadow {
   box-shadow: 0px 4px px 1px rgba(0, 0, 0, 0.5);

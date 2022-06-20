@@ -59,40 +59,80 @@ export default {
     byh: "SINSO Ecosystem Partners",
     byList: [
       {
-        a1: "ARTHA HEALTH is a bio-wave",
-        a2: "data acquisition watch providing",
-        a3: "health reports based on AI data",
-        a4: "analysis.",
+        a1: "ARTHA HEALTH is a bio-wave data acquisition watch providing health reports based on AI data analysis.",
+        b: "",
       },
       {
-        a1: "Oort Digital is a GameFi 3.0",
-        a2: "ecosystem that adds utility-based",
-        a3: "functionality on top of NFTs and",
-        a4: "puts them to work through …",
+        a1: "Oort Digital is a GameFi 3.0 ecosystem that adds utility-based functionality on top of NFTs and puts them to work through financialization, gamification, and interoperability.",
+        b: "https://oort.digital/",
       },
       {
-        a1: "Poly Network is a cross-chain",
-        a2: "protocol that integrates more",
-        a3: "than 20 blockchains such",
-        a4: "as Ethereum, Avalanche…",
+        a1: "Poly Network is a cross-chain protocol that integrates more than 20 blockchains such as Ethereum, Avalanche, Fantom, BNB Chain, etc., to help on-chain assets achieve better transfer.",
+        b: "https://poly.network/#/",
       },
       {
-        a1: "SINSO DAPP is the middleware ",
-        a2: "of the application. SINSOdapp",
-        a3: "online consultation module",
-        a4: "has been",
+        a1: "Uniarts-- UniArts is a decentralized value discovery system for artists and art collectors.",
+        b: "https://uniarts.network/",
       },
       {
-        a1: "SINSO DAPP is the middleware ",
-        a2: "of the application. SINSOdapp",
-        a3: "online consultation module",
-        a4: "has been",
+        a1: "SupraOracles-- SupraOracles offers a solution that provides cross-chain interoperability, 3-5 second finality, and cutting edge cryptography—all backed by thousands of hours of R&D and simulations. ",
+        b: "https://uniarts.network/",
       },
       {
-        a1: "SINSO DAPP is the middleware ",
-        a2: "of the application. SINSOdapp",
-        a3: "online consultation module",
-        a4: "has been",
+        a1: "Metacraft-- Metacraft is a DAPP based NFT creation, staking, lending and trading infrastructure that launches NFT games, and Metaverses.",
+        b: "https://www.metacraft.game/",
+      },
+      {
+        a1: "MeMusic-- MeMusic is revolutionizing the Web3 music industry by leveraging blockchain technology to create a Spotify contender.",
+        b: "https://memusic.io/",
+      },
+      {
+        a1: "Litentry-- Web 3.0 cross-chain identity aggregation protocol",
+        b: "https://litentry.com/",
+      },
+      {
+        a1: "Ortjob--OKRATECH Unveils World’s 1st Ever Commission-Free Freelance Platform ORTJOB in crypto-space, revolutionizing Gig Economy.",
+        b: "https://ortjob.com/",
+      },
+      {
+        a1: "ONTO-- A DID-based gateway for a seamless Web3 experience, allowing you to manage your digital identity, data & assets all in one place.",
+        b: "https://onto.app/",
+      },
+      {
+        a1: "NEO Smart Economy-- Neo is an open-source community driven blockchain platform. Neo enables developers to digitize and automate the management of assets through smart contracts.",
+        b: "https://neo.org/",
+      },
+      {
+        a1: "Maze-- Maze is a trading platform that integrates NFT minting, trading & gifting. It is the first platform in the world to adopt a radical trading model.",
+        b: "https://maz.network/",
+      },
+      {
+        a1: "PLUG Chain-- Providing advanced multi-chain, cross-chain support for other layers2, Plug Chain offers high performance & scalability with low gas fee",
+        b: "https://en.plugchain.info/",
+      },
+      {
+        a1: "SoulMeta-- SoulMeta is an independent Social Metaverse platform deployed on BNB Smart Chain, providing NFT powered social building opportunities for Web3 users.",
+        b: "https://soulmeta.io/ ",
+      },
+      {
+        a1: "WonderfulDay-- WonderfulDay is a decentralized NFT mint, trading, and data display platform, also one of the most-traded NFT collections on the Binance NFT.",
+        b: "https://www.wonderfulday.io/",
+      },
+      {
+        a1: "FINX-- FINX bridges crypto with real world by integrating digital assets into the global financial system, and has an all-in-one DeFi Ecosystem allowing users to store, stack, swap and spend digital assets seamlessly.",
+        b: "https://finx.global/",
+      },
+      {
+        a1: "ARTISTONE-- Artistone is an NFT Marketplace supported by blockchain Web3.0 technology, committed to creating a high-quality art community with artists and originators as the main body.",
+        b: "https://www.artistone.xyz/#/",
+      },
+      {
+        a1: "KAKA Metaverse -- A play-to-earn gaming platform with worldwide IPs NFT.",
+        b: "https://kakanft.com/",
+      },
+      {
+        a1: "The Planet of Hares --The Planet of The Hares is a collection of 10,000 unique, randomly generated Hares roaming on the Ethereum blockchain as ERC-721 NFTs.",
+        b: "https://0xhares.io/",
       },
     ],
     roah: "Roadmap",
@@ -100,51 +140,75 @@ export default {
     roaList: [
       {
         a: "2021 Q3",
-        b: ["DicomNetwork,", "SINSO BOX Utopian Edition,"],
+        b: ["DicomNetwork,", "SINSO DApp Utopian Edition,"],
         c: [
-          "DicomNetwork;",
-          "Wanxiang Hackathon has entered",
-          "the final(2021.08);",
-          "Chia Hackathon Global, Top 3,",
-          "Asia(2021.09);",
+          "Wanxiang Hackathon-DicomNetwork",
+          "has entered the final(2021.08)",
+          "Chia Hackathon Global, Top 3,Asia(2021.09)",
         ],
       },
       {
         a: "2021 Q4",
-        b: ["SINSO Getway v1.0,", " Donors Network v1.0,", "SINSO BOX v1.0,"],
+        b: ["SINSO Network v1.0,", "SINSO DApp Cube v1.0,"],
         c: [
           "Hot data Testnet Mining Online",
           "(2021.10);",
-          "SINSO BOX v1.0(2021.12);",
+          "SINSO DApp Cube v1.0(2021.12);",
         ],
       },
       {
         a: "2022 Q1",
-        b: ["SINSO Getway v2.0,", "SINSO BOX v2.0,", "Donors Network v2.0,"],
-        c: [
-          "Hot data mining mainnet;",
-          "SINSO BOX v2.0;",
-          "Decentralized Medical NFT",
-          "Infrastructure(2022.03);",
-        ],
+        b: ["SINSO Getway v1.0,", "SINSO Mining software v1.0"],
+        c: [],
       },
       {
         a: "2022 Q2",
-        b: ["SINSO DAC v1.0,", "SINSO Getway Extend v 3.0,"],
-        c: [
-          "Virtual big data index DAC(2022.06);",
-          "Decentralized data middle ware",
-          "v1.0 (2022.06);",
+        b: [
+          "SINSO Minging software v2.0,",
+          "SINSO Getway 2.0,",
+          "SINSO Data Land v1.0",
         ],
+        c: [],
       },
       {
-        a: "2022 Q2",
-        b: ["SINSO DAC v1.0,", "SINSO Getway Extend v 3.0,"],
-        c: [
-          "Virtual big data index DAC(2022.06);",
-          "Decentralized data middle ware",
-          "v1.0 (2022.06);",
+        a: "2022 Q3",
+        b: ["SINSO Network v2.0,", "SINSO Data Land v2.0,"],
+        c: [],
+      },
+      {
+        a: "2022 Q4",
+        b: [
+          "SINSO Minging software v3.0,",
+          "Donors Network v3.0,",
+          "SINSO Dapp Cube v2.0",
+          "SINSO DAC V1.0",
         ],
+        c: ["Hot Data Mainner Mining Online (2022.11)"],
+      },
+      {
+        a: "2023 Q1",
+        b: ["Donors Network v4.0,", "SINSO Data Land v3.0,"],
+        c: [],
+      },
+      {
+        a: "2023 Q2",
+        b: ["Donors Getway v3.0,", "Donors Network v5.0,"],
+        c: [],
+      },
+      {
+        a: "2023 Q3",
+        b: [
+          "Donors Network v6.0,",
+          "SINSO Dapp Cube v3.0",
+          "SINSO Data Land v4.0,",
+          "SINSO DAC V2.0",
+        ],
+        c: ["SINSO Mining software v3.0"],
+      },
+      {
+        a: "2023 Q4",
+        b: ["Donors Getway v7.0,", "SINSO Data Land v5.0,"],
+        c: [],
       },
     ],
     edyh: "Backed by",

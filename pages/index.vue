@@ -15,6 +15,16 @@
         <img class="banner" src="/index/img-home-banner@2x.png" />
       </div>
       <div class="backF3f5 padd-tb-ba">
+        <div class="marlrAuto margin-bottom-qi" style="width: 800px">
+          <h1 class="text-center margin-bottom-xl">watch video</h1>
+          <video
+            src="https://bafybeiauhvfcldsxejk37j3tapfnuk6cbetfedl6xfiuiakxr37jdvikw4.ipfs.dweb.link/sinso2.mp4"
+            controls="controls"
+            style="width: 100%"
+          >
+            您的浏览器不支持 video 标签。
+          </video>
+        </div>
         <div class="malrCont">
           <h1 class="text-center">{{ $t("a.pow1") }}</h1>
           <h1 class="text-center margin-bottom-liu">{{ $t("a.pow2") }}</h1>
@@ -139,24 +149,28 @@
               </div>
             </div>
             <div class="usiRight">
-              <NuxtLink to="/">
-                <div class="flex margin-bottom-qi">
-                  <img class="usiImg1" src="/index/usi5.png" />
-                  <div class="hvr-float-shadow usiSon">
-                    <p>Dev docs</p>
-                    <img class="usiImg2" src="/index/img-jiantou@2x.png" />
-                  </div>
+              <div
+                class="flex margin-bottom-qi pointer"
+                @click="hrefCli('https://docs.getway.sinso.io/docs/welcome')"
+              >
+                <img class="usiImg1" src="/index/usi5.png" />
+                <div class="hvr-float-shadow usiSon">
+                  <p>Dev docs</p>
+                  <img class="usiImg2" src="/index/img-jiantou@2x.png" />
                 </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex margin-bottom-xl">
-                  <img class="usiImg1" src="/index/usi3.png" />
-                  <div class="hvr-float-shadow usiSon">
-                    <p>Testnet</p>
-                    <img class="usiImg2" src="/index/img-jiantou@2x.png" />
-                  </div>
+              </div>
+
+              <div
+                class="flex margin-bottom-xl pointer"
+                @click="hrefCli('https://docs.whitelist.vip/docs/welcome')"
+              >
+                <img class="usiImg1" src="/index/usi3.png" />
+                <div class="hvr-float-shadow usiSon">
+                  <p>Testnet</p>
+                  <img class="usiImg2" src="/index/img-jiantou@2x.png" />
                 </div>
-              </NuxtLink>
+              </div>
+
               <img class="usiImg3" src="/index/usi2.png" />
             </div>
           </div>
@@ -175,15 +189,24 @@
                 v-for="(item, index) in $t('a.byList')"
                 :key="index"
               >
-                <img :src="'/index/ol' + index + '.png'" />
-                <div class="lin-height-18">
-                  <p>{{ item.a1 }}</p>
-                  <p>{{ item.a2 }}</p>
-                  <p>{{ item.a3 }}</p>
-                  <p>{{ item.a4 }}</p>
+                <img
+                  :src="'/index/ol' + index + '.png'"
+                  :class="{
+                    img11: index === 11,
+                    img16: index === 16,
+                    img17: index === 17,
+                  }"
+                />
+                <div class="lin-height-18 padding-lr-sm" style="height: 110px">
+                  <p class="text-ellipsis-4">{{ item.a1 }}</p>
                 </div>
-
-                <el-button round class="margin-top">Learn more</el-button>
+                <el-button
+                  round
+                  class="margin-top"
+                  :disabled="!Boolean(item.b)"
+                  @click="hrefCli(item.b)"
+                  >Learn more</el-button
+                >
               </swiper-slide>
 
               <div
@@ -289,6 +312,21 @@
         </p>
       </div>
       <div class="backF3f5 padding-tb-sm">
+         
+        <div class="margin-bottom mobCont">
+                   
+          <h3 class="text-center margin-bottom-sm">watch video</h3>
+                   
+          <video
+            src="https://bafybeiauhvfcldsxejk37j3tapfnuk6cbetfedl6xfiuiakxr37jdvikw4.ipfs.dweb.link/sinso2.mp4"
+            controls="controls"
+            style="width: 100%"
+          >
+                        您的浏览器不支持 video 标签。          
+          </video>
+                 
+        </div>
+
         <div class="text-center lin-height-16 margin-bottom-sm">
           <h3>{{ $t("a.pow1") }}</h3>
           <h3>{{ $t("a.pow2") }}</h3>
@@ -409,24 +447,27 @@
           </div>
           <div class="flex align-center justify-between usiRight">
             <div>
-              <NuxtLink to="/">
-                <div class="flex margin-bottom-sm">
-                  <img class="mobUsiImg1" src="/index/usi5.png" />
-                  <div class="mobUsiSon">
-                    <p>Dev docs</p>
-                    <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
-                  </div>
+              <div
+                class="flex margin-bottom-sm"
+                @click="hrefCli('https://docs.getway.sinso.io/docs/welcome')"
+              >
+                <img class="mobUsiImg1" src="/index/usi5.png" />
+                <div class="mobUsiSon">
+                  <p>Dev docs</p>
+                  <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
                 </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex">
-                  <img class="mobUsiImg1" src="/index/usi3.png" />
-                  <div class="mobUsiSon">
-                    <p>Testnet</p>
-                    <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
-                  </div>
+              </div>
+
+              <div
+                class="flex"
+                @click="hrefCli('https://docs.whitelist.vip/docs/welcome')"
+              >
+                <img class="mobUsiImg1" src="/index/usi3.png" />
+                <div class="mobUsiSon">
+                  <p>Testnet</p>
+                  <img class="mobUsiImg2" src="/index/img-jiantou@2x.png" />
                 </div>
-              </NuxtLink>
+              </div>
             </div>
             <img class="mobUsiImg3" src="/index/usi2.png" />
           </div>
@@ -447,14 +488,27 @@
                   v-for="(item, index) in $t('a.byList')"
                   :key="index"
                 >
-                  <img :src="'/index/ol' + index + '.png'" />
-                  <div class="lin-height-18">
+                  <img
+                    :class="{
+                      img11: index === 11,
+                      img16: index === 16,
+                      img17: index === 17,
+                    }"
+                    :src="'/index/ol' + index + '.png'"
+                  />
+                  <div
+                    class="lin-height-18 text-ellipis-4"
+                    style="height: 130px"
+                  >
                     <p>{{ item.a1 }}</p>
-                    <p>{{ item.a2 }}</p>
-                    <p>{{ item.a3 }}</p>
-                    <p>{{ item.a4 }}</p>
                   </div>
-                  <el-button round class="margin-top">Learn more</el-button>
+                  <el-button
+                    round
+                    class="margin-top"
+                    :disabled="!Boolean(item.b)"
+                    @click="hrefCli(item.b)"
+                    >Learn more</el-button
+                  >
                 </swiper-slide>
                 <div
                   class="swiper-pagination swiper-pagination-white"
@@ -580,6 +634,7 @@ export default {
       },
       //pc 2
       swiperOption2: {
+        // initialSlide: 2,
         slidesPerView: 4,
         spaceBetween: 30,
         navigation: {
@@ -901,6 +956,21 @@ h2 > span {
 #elItem > img {
   height: 70px;
   margin-bottom: 30px;
+}
+#elItem > .img11 {
+  height: 20px;
+  margin-top: 25px;
+  margin-bottom: 55px;
+}
+#elItem > .img16 {
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+#elItem > .img17 {
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 ::v-deep .ecolCont .swiper-button-prev {
   left: 30%;
