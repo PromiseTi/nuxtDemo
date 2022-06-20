@@ -2,7 +2,7 @@
   <div>
     <div class="pcIndex">
       <div class="flex justify-between malrCont swipes">
-        <div class="flex flex-direction justify-center">
+        <div class="flex flex-direction justify-center padding-left-xl">
           <h1 style="font-size: 50px" class="margin-bottom">
             {{ $t("a.h1") }}
           </h1>
@@ -272,7 +272,7 @@
           <div class="flex flex-wrap">
             <img
               class="hvr-grow-shadow byImg"
-              :class="(index + 1) % 5 != 0 && 'bymar'"
+              :class="(index + 1) % 5 != 0 && 'bymarPc'"
               v-for="(item, index) in 17"
               :key="index"
               :src="'/index/by' + index + '.png'"
@@ -871,6 +871,9 @@ h2 > span {
 .byImg {
   width: 18%;
   margin-bottom: 30px;
+}
+.bymarPc {
+  margin-right: 2.5%;
 }
 .bymar {
   margin-right: 1%;
